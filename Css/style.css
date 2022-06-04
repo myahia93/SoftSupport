@@ -1,0 +1,151 @@
+/* Navbar */
+#navMenu {
+    width: 300%;
+    margin-left: 50px;
+}
+
+#navlogin {
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+#lastName {
+    text-transform: uppercase;
+}
+
+#logoutLink {
+    text-decoration: none;
+    color: white;
+}
+
+/* Main Container */
+.main {
+    margin-top: 150px;
+}
+
+/* Footer */
+footer {
+    margin-top: 150px;
+    /* To modify !!!!! */
+    color: rgb(255, 255, 255);
+}
+
+.footerTitle {
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+footer ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+footer ul li p {
+    color: whitesmoke;
+}
+
+.content {
+    width: fit-content;
+    height: fit-content;
+}
+
+.copyright {
+    width: 100%;
+    height: 100%;
+}
+
+.copyright h5 {
+    color: white;
+    display: inline;
+    text-align: center;
+}
+
+.copyright img {
+    width: 150px;
+}
+
+/* Login Page */
+.loginPage {
+    width: 50%;
+    background-color: rgb(235, 210, 210);
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.loginAlert {
+    width: 50%;
+}
+
+/* Users Page */
+.createUser {
+    width: 50%;
+}
+
+#titleLink {
+    text-decoration: none;
+    color: rgb(238, 94, 94);
+}
+
+#titleLink:hover {
+    font-weight: bold;
+}
+
+.listUser {
+    background-color: rgb(243, 232, 240);
+    padding: 15px;
+    border: 2px solid;
+    border-top: none;
+    /* text-align: center; */
+}
+
+.listUser .bold {
+    font-weight: bold;
+}
+
+.listUser .right {
+    text-align: right;
+}
+
+.listUserGrey {
+    background-color: rgb(196, 196, 196);
+}
+
+.listUserTop {
+    border-top: 2px solid;
+    font-weight: bold;
+    border-color: #292b2c;
+    color: white;
+    background-color: #292b2c;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.listUserBottom {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#logoutLink {
+    text-decoration: none;
+    color: white;
+}
+
+#link_right {
+    float: right;
+}
+
+/* Switching to responsive mode */
+@media screen and (max-width: 991px) {
+
+    #navMenu {
+        margin-left: 0;
+    }
+
+    #navlogin {
+        margin-top: 20px;
+        float: none;
+        text-align: left;
+    }
+
+}
