@@ -79,7 +79,6 @@ class ContTickets
     {
         if (isset($_SESSION['isReporter']) && ($_SESSION['isReporter'] == 1 || $_SESSION['isAdmin'] == 1)) {
             $projects = $this->modelTickets->modelGetProjects();
-            $this->viewTickets->viewAlertSuccess("The ticket #0" . $_POST['id_ticket'] . " has been created");
             $this->viewTickets->viewFormTicketCreation($projects);
         } else {
             $this->viewTickets->viewAlertWarning("Access denied : You must be logged in as a reporter to view this page.");
@@ -98,6 +97,7 @@ class ContTickets
                 $array['id_reporter'] = $_SESSION['id_user'];
                 $array['id_project'] = $_POST['id_project'];
                 $this->modelTickets->modelCreateTicket($array);
+                $this->viewTickets->viewAlertSuccess("The ticket " . $_POST['name_ticket'] . " has been created");
                 $this->listTickets();
             }
         } else {
