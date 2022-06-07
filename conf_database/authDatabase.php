@@ -12,9 +12,12 @@ class authDatabse
 
     public static function connectionDB()
     {
+        $file = fopen('C:\Cred_SoftSupport\database_cred.txt', 'rb');
+        $userContent = trim(fgets($file));
+        $passwordContent = fgets($file);
         $dns = "mysql:host=localhost; dbname=softsupport_database";
-        $user = "admin_db";
-        $password = "VxcQS6ZTGJRYqab1";
+        $user = $userContent;
+        $password = $passwordContent;
         try {
             self::$db = new PDO($dns, $user, $password);
         } catch (PDOException $e) {

@@ -63,6 +63,13 @@ class ViewStats
 
 
 
+    <?php
+    }
+
+    public function viewAlertWarning($msg)
+    {
+    ?>
+        <div class="alert alert-warning text-center mx-auto mt-3" role="alert"><?php echo $msg; ?></div>
 <?php
     }
 }

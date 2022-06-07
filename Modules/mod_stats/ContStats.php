@@ -52,7 +52,7 @@ class ContStats
 
             $this->viewStats->viewStatsPage($amount);
         } else {
-            $this->viewProjects->viewAlertWarning("Access denied : You must be logged in to view this page.");
+            $this->viewStats->viewAlertWarning("Access denied : You must be logged in to view this page.");
         }
     }
 }
