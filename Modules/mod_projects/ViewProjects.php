@@ -72,11 +72,12 @@ class ViewProjects
                     <img class="img-fluid" src="Resources/<?php echo $color; ?>_circle.png" alt="Logo du site" width="15"> <span><?php echo $value['status_project']; ?></span>
                 </div>
                 <div class="col-md-2 right">
-                    <!-- TODO edit project -->
-                    <form method="POST" action="index.php?module=projects&action=form_edit_project">
-                        <input type="hidden" name="id_project" value="<?php echo $value['id_project']; ?>">
-                        <button class="btn btn-dark" type="submit">Edit</button>
-                    </form>
+                    <?php if ($_SESSION['isReporter'] != 1) { ?>
+                        <form method="POST" action="index.php?module=projects&action=form_edit_project">
+                            <input type="hidden" name="id_project" value="<?php echo $value['id_project']; ?>">
+                            <button class="btn btn-dark" type="submit">Edit</button>
+                        </form>
+                    <?php } ?>
                 </div>
             </div>
         <?php

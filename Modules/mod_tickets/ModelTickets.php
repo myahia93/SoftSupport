@@ -115,7 +115,7 @@ class ModelTickets extends authDatabse
     public function modelGetTickets()
     {
         try {
-            $req = self::$db->prepare("SELECT * FROM ticket ORDER BY id_ticket DESC;");
+            $req = self::$db->prepare("SELECT * FROM ticket ORDER BY creation_date DESC;");
             $req->execute();
             $result = $req->fetchAll();
             return $result;

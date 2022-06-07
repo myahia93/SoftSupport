@@ -47,7 +47,7 @@ class ViewStats
                             text: 'Number of ticket'
                         },
                         ticks: {
-                            stepSize: 10
+                            stepSize: 5
                         }
                     }
                 }

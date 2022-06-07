@@ -50,10 +50,12 @@ class ViewCustomers
                     <span><?php echo $value['projects']; ?></span>
                 </div>
                 <div class="col-md-2 right">
-                    <form method="POST" action="index.php?module=customers&action=form_edit_customer">
-                        <input type="hidden" name="id_customer" value="<?php echo $value['id_customer']; ?>">
-                        <button class="btn btn-dark" type="submit">Edit</button>
-                    </form>
+                    <?php if ($_SESSION['isReporter'] != 1) { ?>
+                        <form method="POST" action="index.php?module=customers&action=form_edit_customer">
+                            <input type="hidden" name="id_customer" value="<?php echo $value['id_customer']; ?>">
+                            <button class="btn btn-dark" type="submit">Edit</button>
+                        </form>
+                    <?php } ?>
                 </div>
             </div>
         <?php
