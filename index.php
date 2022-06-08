@@ -50,7 +50,6 @@ session_start();
                         <a class="nav-item nav-link <?php if ($module == "users") { ?> active <?php } ?>" href="index.php?module=users">Users</a>
                     <?php }  ?>
                     <a class="nav-item nav-link <?php if ($module == "stats") { ?> active <?php } ?>" href="index.php?module=stats">Statistics</a>
-                    <a class="nav-item nav-link" href="#">Wiki</a>
                 </div>
                 <div class="navbar-nav" id="navlogin">
                     <?php if (isset($_SESSION['username'])) { ?>

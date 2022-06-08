@@ -12,16 +12,18 @@ class authDatabse
 
     public static function connectionDB()
     {
+        //Reading credentials file
         $file = fopen('C:\Cred_SoftSupport\database_cred.txt', 'rb');
         $userContent = trim(fgets($file));
         $passwordContent = fgets($file);
+
         $dns = "mysql:host=localhost; dbname=softsupport_database";
         $user = $userContent;
         $password = $passwordContent;
         try {
             self::$db = new PDO($dns, $user, $password);
         } catch (PDOException $e) {
-            echo "Not connected to web server";
+            echo "Not connected to mysql server";
         }
     }
 }

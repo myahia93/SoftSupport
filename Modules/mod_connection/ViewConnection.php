@@ -11,7 +11,7 @@ class ViewConnection
     public function viewLoginPage()
     {
 ?>
-        <div class="loginPage mx-auto mb-4 mt-3">
+        <div class="loginPage mx-auto">
 
             <h2 class="mb-4">Login</h2>
             <form action="index.php?module=connection&action=login" method="POST">
