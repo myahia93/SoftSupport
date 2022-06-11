@@ -36,8 +36,18 @@ footer {
     text-align: center;
 }
 
+footer ul li {
+    text-align: center;
+}
+
 footer ul li a {
     color: whitesmoke;
+    text-decoration: none;
+    text-align: center;
+}
+
+footer ul li a:hover {
+    color: rgb(238, 94, 94);
     text-decoration: none;
 }
 

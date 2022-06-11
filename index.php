@@ -117,12 +117,33 @@ session_start();
             <div class="row">
                 <div class="col-lg-4">
                     <h5 class="footerTitle text-uppercase">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>Email : mohcine.yahia@efrei.net</p>
+                        </li>
+                    </ul>
                 </div>
                 <div class="col-lg-4">
                     <h5 class="footerTitle text-uppercase">Helpful Links</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="index.php?module=tickets">Tickets</a>
+                        </li>
+                        <li>
+                            <a href="index.php?module=projects">Projects</a>
+                        </li>
+                        <li>
+                            <a href="index.php?module=customers">Customers</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="col-lg-4">
                     <h5 class="footerTitle text-uppercase">About us</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>A web site by Efrei Paris</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
