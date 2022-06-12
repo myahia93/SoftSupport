@@ -23,6 +23,10 @@ class ViewHome
         <?php } else { ?>
 
             <?php if ($_SESSION['isReporter'] == 1) { ?>
+                <h1 class="display-4">You are logged in as a Reporter</h1>
+
+                <hr class="my-4">
+
                 <h1 class="display-3"><a id="titleLink" href="index.php?module=tickets&action=form_create_ticket">Open a Ticket</a></h1>
 
                 <hr class="my-5">
@@ -38,6 +42,10 @@ class ViewHome
 
 
             <?php if ($_SESSION['isDev'] == 1) { ?>
+                <h1 class="display-4">You are logged in a a Developer</h1>
+
+                <hr class="my-4">
+
                 <h1 class="display-3"><a id="titleLink" href="index.php?module=tickets">My assigned tickets</a></h1>
 
                 <hr class="my-5">
@@ -53,6 +61,10 @@ class ViewHome
 
 
             <?php if ($_SESSION['isAdmin'] == 1) { ?>
+                <h1 class="display-4">You are logged in as an Administrator</h1>
+
+                <hr class="my-4">
+
                 <h1 class="display-3"><a id="titleLink" href="index.php?module=users&action=form_create_user">Create a user</a></h1>
 
                 <hr class="my-5">

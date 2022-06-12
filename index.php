@@ -1,6 +1,7 @@
 <?php
 define('CONST_INCLUDE', NULL);
 session_start();
+ob_start();
 ?>
 
 <!DOCTYPE html>

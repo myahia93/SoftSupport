@@ -6,6 +6,9 @@ if (!defined('CONST_INCLUDE'))
 
 include_once "ViewUsers.php";
 include_once "ModelUsers.php";
+require '../SoftSupport/vendor/autoload.php';
+
+use \Mailjet\Resources;
 
 class ContUsers
 {
@@ -61,21 +64,54 @@ class ContUsers
                                 $array['isAdmin'] = 0;
                                 $array['isDev'] = 1;
                                 $array['isReporter'] = 0;
+                                $typeForMail = "Developer";
                                 break;
                             case '2':
                                 $array['isAdmin'] = 0;
                                 $array['isDev'] = 0;
                                 $array['isReporter'] = 1;
+                                $typeForMail = "Reporter";
                                 break;
                             case '3':
                                 $array['isAdmin'] = 1;
                                 $array['isDev'] = 0;
                                 $array['isReporter'] = 0;
+                                $typeForMail = "Administrator";
                                 break;
                         }
 
                         //User creation
                         $this->modelUsers->modelCreateUser($array);
+
+                        //Sending mail
+                        $file = fopen('C:\Cred_SoftSupport\mailjet_cred.txt', 'rb');
+                        $mj = new \Mailjet\Client(trim(fgets($file)), fgets($file), true, ['version' => 'v3.1']);
+                        $body = [
+                            'Messages' => [
+                                [
+                                    'From' => [
+                                        'Email' => "mohcine.yahia@efrei.net",
+                                        'Name' => "SoftSupport Administrator"
+                                    ],
+                                    'To' => [
+                                        [
+                                            'Email' => $array['mail'],
+                                            'Name' => $array['first_name']
+                                        ]
+                                    ],
+                                    'Subject' => "Welcome to SoftSupport",
+                                    'TextPart' => "New account created",
+                                    'HTMLPart' => "<h1>Hello " . $array['first_name'] . ", Welcome to SoftSupport !!</h1><br />
+                                    <h3>You have been assigned to SoftSupport as a " . $typeForMail . ".</h3><br />
+                                    Username : " . $array['username'] . "<br>
+                                    Password : " . $_POST['password'] . '<br />
+                                    <h4><a href="http://localhost/SoftSupport">SoftSupport</a></h4>'
+                                ]
+                            ]
+                        ];
+                        $response = $mj->post(Resources::$Email, ['body' => $body]);
+                        // $response->success() && var_dump($response->getData());
+
                         $this->viewUsers->viewAlertSuccess("The user " . $array['username'] . " has been created");
                     }
                     $this->listUsers();
